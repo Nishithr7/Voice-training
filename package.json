@@ -1,0 +1,34 @@
+{
+  "name": "speaking-coach",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Personal speaking practice tool: rehearse real-world scenarios, get honest structured feedback.",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node --watch --env-file-if-exists=.env server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.0",
+    "concurrently": "^9.1.0",
+    "vite": "^6.3.0"
+  },
+  "overrides": {
+    "rollup": "4.63.4",
+    "source-map-js": "1.2.1",
+    "caniuse-lite": "1.0.30001810",
+    "electron-to-chromium": "1.5.430",
+    "browserslist": "4.28.9",
+    "baseline-browser-mapping": "2.11.25"
+  }
+}
